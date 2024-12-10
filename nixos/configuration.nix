@@ -89,6 +89,9 @@
     eza
     gh
     pinentry-curses
+    grim
+    slurp
+    wl-clipboard
 
     # Flakes
     inputs.zen-browser.packages."${system}".specific
