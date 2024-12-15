@@ -92,6 +92,7 @@
     grim
     slurp
     wl-clipboard
+    tetrio-desktop
 
     # Flakes
     inputs.zen-browser.packages."${system}".specific
@@ -113,6 +114,7 @@
     firefox.enable = true;
     git.enable = true;
     tmux.enable = true;
+    htop.enable = true;
     waybar.enable = true;
     hyprland = {
       enable = true;
