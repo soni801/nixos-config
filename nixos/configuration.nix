@@ -102,6 +102,7 @@
     tetrio-desktop
     clonehero
     modrinth-app
+    wineWowPackages.stable
 
     # Flakes
     inputs.zen-browser.packages."${system}".specific
