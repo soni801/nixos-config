@@ -100,6 +100,8 @@
     slurp
     wl-clipboard
     tetrio-desktop
+    clonehero
+    modrinth-app
 
     # Flakes
     inputs.zen-browser.packages."${system}".specific
