@@ -103,6 +103,9 @@
     clonehero
     modrinth-app
     wineWowPackages.stable
+    hyprpolkitagent
+    dust
+    mise
 
     # Flakes
     inputs.zen-browser.packages."${system}".specific
