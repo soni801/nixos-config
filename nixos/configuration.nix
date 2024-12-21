@@ -105,7 +105,9 @@
     wineWowPackages.stable
     hyprpolkitagent
     dust
-    mise
+
+    # Dev tools
+    nodejs_22
 
     # Flakes
     inputs.zen-browser.packages."${system}".specific
