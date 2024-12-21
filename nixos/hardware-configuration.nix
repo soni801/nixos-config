@@ -21,16 +21,31 @@
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/NIXROOT";
-      fsType = "btrfs";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/NIXROOT";
+    fsType = "btrfs";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-label/NIXBOOT";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-label/NIXBOOT";
+    fsType = "vfat";
+    options = [ "fmask=0022" "dmask=0022" ];
+  };
+
+  fileSystems."/mnt/Files" = {
+    device = "/dev/disk/by-label/Files";
+    fsType = "ntfs";
+  };
+
+  fileSystems."/mnt/Software" = {
+    device = "/dev/disk/by-label/Software";
+    fsType = "ntfs";
+  };
+
+  fileSystems."/mnt/Windows" = {
+    device = "/dev/disk/by-uuid/0868853068851E16";
+    fsType = "ntfs";
+  };
 
   swapDevices = [ ];
 
