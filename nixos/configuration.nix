@@ -5,10 +5,15 @@
 { inputs, config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Import other config files
+    ./config/desktop.nix
+    ./config/development.nix
+    ./config/gaming.nix
+
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # This is needed to get video output on Hyper-V
   #boot.kernelParams = [ "nomodeset" ];
@@ -26,15 +31,6 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "";
-  };
-
-  # Let's have Plasma in addition to Hyprland just in case
-  services.desktopManager.plasma6.enable = true;
-
-  # Display manager
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -76,44 +72,18 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Nixpkgs
-    alacritty
-    jetbrains-toolbox
     bat
-    fzf
-    yt-dlp
-    tealdeer
     delta
-    rustup
-    legcord
-    nerd-fonts.jetbrains-mono
-    postman
-    rpiplay
-    proton-pass
-    vscode
-    swaybg
-    anyrun
-    fastfetch
-    eza
-    gh
-    pinentry-curses
-    grim
-    slurp
-    wl-clipboard
-    tetrio-desktop
-    clonehero
-    modrinth-app
-    wineWowPackages.stable
-    hyprpolkitagent
     dust
-
-    # Dev tools
-    nodejs_22
-
-    # Flakes
-    inputs.zen-browser.packages."${system}".specific
+    eza
+    fastfetch
+    fzf
+    pinentry-curses
+    tealdeer
+    wineWowPackages.stable
+    yt-dlp
   ];
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -125,17 +95,9 @@
   services.pcscd.enable = true;
 
   programs = {
-    steam.enable = true;
-    firefox.enable = true;
     git.enable = true;
     tmux.enable = true;
     htop.enable = true;
-    waybar.enable = true;
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    };
     zsh = {
       enable = true;
       autosuggestions.enable = true;
@@ -168,10 +130,6 @@
       enable = true;
       defaultEditor = true;
       vimAlias = true;
-    };
-    obs-studio = {
-      enable = true;
-      enableVirtualCamera = true;
     };
   };
 
