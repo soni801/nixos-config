@@ -26,6 +26,7 @@
 
     # Stuff for Hyprland
     grim
+    hyprpanel
     hyprpolkitagent
     slurp
     swaybg
