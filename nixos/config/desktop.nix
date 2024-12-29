@@ -13,13 +13,18 @@
   # Attempt fixing electron apps
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  # Fonts
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    roboto
+  ];
+
   # Packages
   environment.systemPackages = with pkgs; [
     # Nixpkgs
     alacritty
     anyrun
     legcord
-    nerd-fonts.jetbrains-mono
     proton-pass
     rpiplay
     wl-clipboard
