@@ -25,6 +25,7 @@
     alacritty
     anyrun
     legcord
+    parsec-bin
     proton-pass
     rpiplay
     wl-clipboard
