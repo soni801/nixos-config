@@ -4,8 +4,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ ];
-
+  # Boot parameters and such
   boot.initrd.availableKernelModules = [ "vmd" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
@@ -21,6 +20,10 @@
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Splash screen
+  boot.plymouth.enable = true;
+
+  # File systems
   fileSystems."/" = {
     device = "/dev/disk/by-label/NIXROOT";
     fsType = "btrfs";
