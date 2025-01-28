@@ -3,8 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    polymc.url = "github:PolyMC/PolyMC";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
@@ -21,6 +23,7 @@
 
       overlays = [
         inputs.hyprpanel.overlay
+	inputs.polymc.overlay
       ];
     };
   in

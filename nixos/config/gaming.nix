@@ -4,7 +4,7 @@
   # Packages
   environment.systemPackages = with pkgs; [
     clonehero
-    modrinth-app
+    polymc
     tetrio-desktop
   ];
 
