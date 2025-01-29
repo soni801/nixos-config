@@ -80,6 +80,7 @@
     fzf
     pinentry-curses
     tealdeer
+    wakelan
     wineWowPackages.stable
     yt-dlp
   ];
