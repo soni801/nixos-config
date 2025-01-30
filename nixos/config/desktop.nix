@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 
 {
   # Display manager
@@ -14,10 +14,7 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Fonts
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    roboto
-  ];
+  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono roboto ];
 
   # Packages
   environment.systemPackages = with pkgs; [
@@ -47,8 +44,9 @@
     waybar.enable = true;
     hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      package = inputs.hyprland.packages.${system}.hyprland;
+      portalPackage =
+        inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
     };
     obs-studio = {
       enable = true;
