@@ -10,32 +10,15 @@
     zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
-  outputs = { self, nixpkgs, ... } @ inputs:
-  let
-    system = "x86_64-linux";
+  outputs = { self, nixpkgs, ... }@inputs:
+    let system = "x86_64-linux";
+    in {
+      nixosConfigurations = {
+        nixos = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit system inputs; };
 
-    pkgs = import nixpkgs {
-      inherit system;
-
-      config = {
-        allowUnfree = true;
-      };
-
-      overlays = [
-        inputs.hyprpanel.overlay
-	inputs.polymc.overlay
-      ];
-    };
-  in
-  {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit system pkgs inputs; };
-
-	modules = [
-	  ./nixos/configuration.nix
-	];
+          modules = [ ./nixos/configuration.nix ];
+        };
       };
     };
-  };
 }

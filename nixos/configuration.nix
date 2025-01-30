@@ -39,14 +39,14 @@
     description = "Soni";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
   # Set extra sudo options
-  security.sudo.extraConfig = "
+  security.sudo.extraConfig = ''
     Defaults	pwfeedback
     Defaults	insults
-  ";
+  '';
 
   # Enable Yubikey login
   security.pam.services = {
@@ -105,26 +105,21 @@
       syntaxHighlighting.enable = true;
       shellAliases = {
         ls = "eza -F -aa --icons --hyperlink";
-	cat = "bat";
+        cat = "bat";
       };
       ohMyZsh = {
         enable = true;
-	theme = "refined";
-	plugins = [
-	  "colored-man-pages"
-	  "docker-compose"
-	  "docker"
-	  "rust"
-	  "ssh"
-	];
+        theme = "refined";
+        plugins =
+          [ "colored-man-pages" "docker-compose" "docker" "rust" "ssh" ];
       };
       setOptions = [
         "APPENDHISTORY"
-	"SHAREHISTORY"
-	"HIST_IGNORE_ALL_DUPS"
-	"HIST_SAVE_NO_DUPS"
-	"HIST_IGNORE_DUPS"
-	"HIST_FIND_NO_DUPS"
+        "SHAREHISTORY"
+        "HIST_IGNORE_ALL_DUPS"
+        "HIST_SAVE_NO_DUPS"
+        "HIST_IGNORE_DUPS"
+        "HIST_FIND_NO_DUPS"
       ];
     };
     neovim = {
@@ -136,6 +131,9 @@
 
   # Enable Docker
   virtualisation.docker.enable = true;
+
+  nixpkgs.config = { allowUnfree = true; };
+  nixpkgs.overlays = [ inputs.hyprpanel.overlay inputs.polymc.overlay ];
 
   # List services that you want to enable:
 
