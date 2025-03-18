@@ -26,11 +26,16 @@
   '';
 
   # Bootloader
-  boot.loader.grub = {
-    efiSupport = true;
-    device = "nodev";
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+    grub = {
+      efiSupport = true;
+      device = "nodev";
+    };
   };
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # Splash screen
   boot.plymouth.enable = true;
@@ -41,7 +46,7 @@
     fsType = "btrfs";
   };
 
-  fileSystems."/boot" = {
+  fileSystems."/boot/efi" = {
     device = "/dev/disk/by-label/NIXBOOT";
     fsType = "vfat";
     options = [ "fmask=0022" "dmask=0022" ];
