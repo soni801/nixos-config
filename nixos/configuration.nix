@@ -10,6 +10,7 @@
     ./config/desktop.nix
     ./config/development.nix
     ./config/gaming.nix
+    ./config/vm.nix
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -38,7 +39,7 @@
     isNormalUser = true;
     description = "Soni";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
     packages = with pkgs; [ ];
   };
 
