@@ -10,6 +10,7 @@
     ./config/desktop.nix
     ./config/development.nix
     ./config/gaming.nix
+    ./config/networking.nix
     ./config/vm.nix
 
     # Include the results of the hardware scan.
