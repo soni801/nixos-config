@@ -40,6 +40,7 @@
 
   # Programs
   programs = {
+    partition-manager.enable = true;
     firefox.enable = true;
     waybar.enable = true;
     hyprland = {
