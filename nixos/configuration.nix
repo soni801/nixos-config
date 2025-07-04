@@ -135,7 +135,7 @@
   virtualisation.docker.enable = true;
 
   nixpkgs.config = { allowUnfree = true; };
-  nixpkgs.overlays = [ inputs.hyprpanel.overlay inputs.polymc.overlay ];
+  nixpkgs.overlays = [ inputs.polymc.overlay ];
 
   # List services that you want to enable:
 

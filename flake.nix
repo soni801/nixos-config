@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     polymc.url = "github:PolyMC/PolyMC";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
