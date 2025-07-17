@@ -10,8 +10,12 @@
     nodejs_22
     rustup
 
+    # JetBrains apps
+    jetbrains.webstorm
+    jetbrains.gateway
+    jetbrains.datagrip
+
     # Desktop apps
-    jetbrains-toolbox
     postman
     vscode
   ];
