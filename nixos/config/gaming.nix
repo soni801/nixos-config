@@ -2,7 +2,10 @@
 
 {
   # Packages
-  environment.systemPackages = with pkgs; [ clonehero polymc tetrio-desktop ];
+  environment.systemPackages = with pkgs; [
+    clonehero
+    tetrio-desktop
+  ];
 
   # Programs
   programs.steam.enable = true;
