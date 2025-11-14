@@ -13,14 +13,14 @@
     let system = "x86_64-linux";
     in {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        desktop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit system inputs; };
-          modules = [ ./nixos/nixos.nix ];
+          modules = [ ./machines/desktop/configuration.nix ];
         };
 
-	headless = nixpkgs.lib.nixosSystem {
+	proxmox = nixpkgs.lib.nixosSystem {
 	  specialArgs = { inherit system inputs; };
-	  modules = [ ./nixos/headless.nix ];
+	  modules = [ ./machines/proxmox/configuration.nix ];
 	};
       };
     };

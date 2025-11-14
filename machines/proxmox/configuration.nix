@@ -7,21 +7,13 @@
 {
   imports = [
     # Import other config files
-    ./config/desktop.nix
-    ./config/development.nix
-    ./config/gaming.nix
-    ./config/networking.nix
-    ./config/vm.nix
+    ../../config/ssh.nix
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
-  # This is needed to get video output on Hyper-V
-  #boot.kernelParams = [ "nomodeset" ];
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "nixos-headless"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "Europe/Oslo";
@@ -36,9 +28,9 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.soni = {
+  users.users.samuel = {
     isNormalUser = true;
-    description = "Soni";
+    description = "Samuel";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
     packages = with pkgs; [ ];
@@ -49,16 +41,6 @@
     Defaults	pwfeedback
     Defaults	insults
   '';
-
-  # Enable Yubikey login
-  security.pam.services = {
-    login.u2fAuth = true;
-    sudo.u2fAuth = true;
-  };
-  security.pam.u2f.settings = {
-    cue = true;
-    interactive = true;
-  };
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -83,8 +65,6 @@
     pinentry-curses
     tealdeer
     wakelan
-    wineWowPackages.stable
-    yt-dlp
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -135,7 +115,6 @@
   virtualisation.docker.enable = true;
 
   nixpkgs.config = { allowUnfree = true; };
-  nixpkgs.overlays = [ inputs.polymc.overlay ];
 
   # List services that you want to enable:
 
@@ -146,7 +125,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -154,6 +133,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 
 }
