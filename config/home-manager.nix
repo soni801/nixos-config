@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 
 {
   imports = [
@@ -6,7 +6,16 @@
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.users.soni = ./home-manager/home.nix;
+
+      # Auto configure users from dirctory
+      home-manager.users = let
+        users = (builtins.attrNames (lib.filterAttrs (n: _: n != "default.nix" && !lib.hasPrefix "." n)
+	  (builtins.readDir ./users/.)));
+      in
+        builtins.listToAttrs (builtins.map (user: {
+	  name = user;
+	  value = ./users/${user}/configuration.nix;
+	}) users);
     }
   ];
 }
