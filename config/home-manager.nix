@@ -6,6 +6,7 @@
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
+      home-manager.backupFileExtension = "bak";
 
       # Auto configure users from dirctory
       home-manager.users = let

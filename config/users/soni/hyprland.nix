@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
     "$terminal" = "alacritty";
     "$fileManager" = "dolphin";
@@ -19,11 +20,11 @@
       "swaybg --image ~/.local/share/wallpapers/avery.jpeg --mode fill"
     ];
 
-    env = [
-      "XCURSOR_SIZE,24"
-      "HYPRCURSOR_SIZE,24"
-      "ELECTRON_OZONE_PLATFORM_HINT,auto"
-    ];
+    #env = [
+    #  "XCURSOR_SIZE,24"
+    #  "HYPRCURSOR_SIZE,24"
+    #  "ELECTRON_OZONE_PLATFORM_HINT,auto"
+    #];
 
     general = {
       gaps_in = "5";
@@ -155,6 +156,13 @@
       "5, monitor:DP-1, default:true"
       "6, monitor:DP-1"
     ];
+  };
+
+  # Environment variables
+  home.sessionVariables = {
+    XCURSOR_SIZE = "24";
+    HYPRCURSOR_SIZE = "24";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
 }
 
