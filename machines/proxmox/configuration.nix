@@ -10,6 +10,7 @@
     ../../config/ssh.nix
 
     # Include the results of the hardware scan.
+    ./network.nix
     ./hardware-configuration.nix
   ];
 
