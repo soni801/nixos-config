@@ -13,6 +13,9 @@
     ../../config/networking.nix
     ../../config/vm.nix
 
+    # Home manager
+    ../../config/home-manager.nix
+
     # Include the results of the hardware scan.
     ./network.nix
     ./hardware-configuration.nix
@@ -136,7 +139,6 @@
   virtualisation.docker.enable = true;
 
   nixpkgs.config = { allowUnfree = true; };
-  nixpkgs.overlays = [ inputs.polymc.overlay ];
 
   # List services that you want to enable:
 
