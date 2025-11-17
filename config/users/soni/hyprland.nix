@@ -6,7 +6,7 @@
   wayland.windowManager.hyprland.settings = {
     # Application definitions
     "$terminal" = "alacritty";
-    "$fileManager" = "dolphin";
+    "$fileManager" = "nautilus";
     "$menu" = "anyrun";
 
     # Modifier key definitions

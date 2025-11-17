@@ -22,6 +22,7 @@
     alacritty
     anyrun
     legcord
+    nautilus
     parsec-bin
     proton-pass
     rpiplay
