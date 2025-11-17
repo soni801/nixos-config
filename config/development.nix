@@ -11,9 +11,10 @@
     rustup
 
     # JetBrains apps
-    jetbrains.webstorm
-    jetbrains.gateway
     jetbrains.datagrip
+    jetbrains.gateway
+    jetbrains.rust-rover
+    jetbrains.webstorm
 
     # Desktop apps
     postman
