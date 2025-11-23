@@ -12,6 +12,7 @@
     ../../config/gaming.nix
     ../../config/networking.nix
     ../../config/vm.nix
+    ../../config/git.nix
 
     # Home manager
     ../../config/home-manager.nix
@@ -102,13 +103,6 @@
   services.pcscd.enable = true;
 
   programs = {
-    git.enable = true;
-    git.config = {
-      core.pager = "delta";
-      interactive.diffFilter = "delta --color-only";
-      delta.navigate = true;
-      merge.conflictStyle = "zdiff3";
-    };
     tmux.enable = true;
     htop.enable = true;
     zsh = {
