@@ -22,11 +22,10 @@
           specialArgs = { inherit system inputs; };
           modules = [ ./machines/desktop/configuration.nix ];
         };
-
-	proxmox = nixpkgs.lib.nixosSystem {
-	  specialArgs = { inherit system inputs; };
-	  modules = [ ./machines/proxmox/configuration.nix ];
-	};
+	      proxmox = nixpkgs.lib.nixosSystem {
+	        specialArgs = { inherit system inputs; };
+	        modules = [ ./machines/proxmox/configuration.nix ];
+	      };
       };
     };
 }

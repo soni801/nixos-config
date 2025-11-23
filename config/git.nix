@@ -9,9 +9,9 @@
       merge.conflictStyle = "zdiff3";
       delta = {
         navigate = true;
-	line-numbers = true;
-	hyperlinks = true;
+	      line-numbers = true;
+	      hyperlinks = true;
       };
     };
- };
+  };
 }

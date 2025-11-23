@@ -13,14 +13,15 @@
       };
 
       # Auto configure users from dirctory
-      home-manager.users = let
+      home-manager.users =
+      let
         users = (builtins.attrNames (lib.filterAttrs (n: _: n != "default.nix" && !lib.hasPrefix "." n)
-	  (builtins.readDir ./users/.)));
+      	  (builtins.readDir ./users/.)));
       in
         builtins.listToAttrs (builtins.map (user: {
-	  name = user;
-	  value = ./users/${user}/configuration.nix;
-	}) users);
+      	  name = user;
+      	  value = ./users/${user}/configuration.nix;
+      	}) users);
     }
   ];
 }
