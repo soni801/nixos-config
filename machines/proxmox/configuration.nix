@@ -80,6 +80,12 @@
 
   programs = {
     git.enable = true;
+    git.config = {
+      core.pager = "delta";
+      interactive.diffFilter = "delta --color-only";
+      delta.navigate = true;
+      merge.conflictStyle = "zdiff3";
+    };
     tmux.enable = true;
     htop.enable = true;
     zsh = {
