@@ -4,6 +4,7 @@
   imports = [
     # Import other config files
     ./hyprland.nix
+    ./editor.nix
   ];
 
   # Home Manager needs a bit of information about you and the

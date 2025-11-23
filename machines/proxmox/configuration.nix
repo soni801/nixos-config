@@ -89,6 +89,7 @@
       shellAliases = {
         ls = "eza -F -aa --icons --hyperlink";
         cat = "bat";
+        vim = "nvim";
       };
       ohMyZsh = {
         enable = true;
@@ -105,17 +106,18 @@
         "HIST_FIND_NO_DUPS"
       ];
     };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      vimAlias = true;
-    };
   };
 
   # Enable Docker
   virtualisation.docker.enable = true;
 
   nixpkgs.config = { allowUnfree = true; };
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      nvchad = inputs.nix4nvchad.packages."${pkgs.system}".nvchad;
+    })
+  ];
 
   # List services that you want to enable:
 

@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ system, inputs, lib, ... }:
 
 {
   imports = [
@@ -7,6 +7,10 @@
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.backupFileExtension = "bak";
+
+      home-manager.extraSpecialArgs = {
+        inherit system inputs;
+      };
 
       # Auto configure users from dirctory
       home-manager.users = let
