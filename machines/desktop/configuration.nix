@@ -93,6 +93,9 @@
     yt-dlp
   ];
 
+  # This does not belong here but it is fine for now
+  environment.variables.EDITOR = "nvim";
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
