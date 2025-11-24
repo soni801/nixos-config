@@ -13,6 +13,7 @@
     ../../config/networking.nix
     ../../config/vm.nix
     ../../config/git.nix
+    ../../config/nixpkgs.nix
 
     # Home manager
     ../../config/home-manager.nix
@@ -134,14 +135,6 @@
   # Enable Docker
   virtualisation.docker.enable = true;
 
-  nixpkgs.config = { allowUnfree = true; };
-
-  nixpkgs.overlays = [
-    (final: prev: {
-      nvchad = inputs.nix4nvchad.packages."${pkgs.system}".nvchad;
-    })
-  ];
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -160,5 +153,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
