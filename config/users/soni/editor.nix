@@ -6,4 +6,6 @@
   ];
 
   programs.nvchad.enable = true;
+
+  environment.variables.EDITOR = "nvim";
 }
