@@ -91,6 +91,7 @@
         ls = "eza -F -aa --icons --hyperlink";
         cat = "bat";
         vim = "nvim";
+        gl = "git log --oneline --graph --all";
       };
       ohMyZsh = {
         enable = true;
