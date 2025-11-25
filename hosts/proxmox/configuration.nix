@@ -6,13 +6,22 @@
 
 {
   imports = [
-    # Import other config files
-    ../../config/ssh.nix
-    ../../config/git.nix
-    ../../config/nixpkgs.nix
+    # Default
+    ../../modules/git.nix
+    ../../modules/nix-options.nix
+    ../../modules/region.nix
+    ../../modules/security.nix
+
+    # Options
+    ../../modules/options/docker.nix
+    ../../modules/options/shell.nix
+    ../../modules/options/ssh-server.nix
+    ../../modules/options/vm-guest.nix
+
+    # Network
+    ../../modules/network/static.nix
 
     # Include the results of the hardware scan.
-    ./network.nix
     ./hardware-configuration.nix
   ];
 
@@ -24,7 +33,6 @@
     description = "Samuel";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
-    packages = with pkgs; [ ];
   };
 
   # List packages installed in system profile. To search, run:
@@ -32,9 +40,6 @@
     dust
     wakelan
   ];
-
-  # I don't think I need this
-  #services.pcscd.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
