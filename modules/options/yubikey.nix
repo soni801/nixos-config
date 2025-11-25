@@ -12,6 +12,5 @@
     interactive = true;
   };
 
-  # TODO: Check if I actually need this?
   services.pcscd.enable = true;
 }
