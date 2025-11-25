@@ -13,14 +13,14 @@
     ../../modules/security.nix
 
     # Options
-    ../../modules/desktop.nix
-    ../../modules/development.nix
-    ../../modules/docker.nix
-    ../../modules/gaming.nix
-    ../../modules/shell.nix
-    ../../modules/sysadmin.nix
-    ../../modules/vm-host.nix
-    ../../modules/yubikey.nix
+    ../../modules/options/desktop.nix
+    ../../modules/options/development.nix
+    ../../modules/options/docker.nix
+    ../../modules/options/gaming.nix
+    ../../modules/options/shell.nix
+    ../../modules/options/sysadmin.nix
+    ../../modules/options/vm-host.nix
+    ../../modules/options/yubikey.nix
 
     # Network
     ../../modules/network/dynamic.nix
