@@ -12,7 +12,6 @@
 
     # Utilities
     fzf
-    pinentry-curses # TODO: Move to Git
     tealdeer
   ];
 
