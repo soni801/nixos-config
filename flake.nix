@@ -20,11 +20,11 @@
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit system inputs; };
-          modules = [ ./machines/desktop/configuration.nix ];
+          modules = [ ./hosts/desktop/configuration.nix ];
         };
 	      proxmox = nixpkgs.lib.nixosSystem {
 	        specialArgs = { inherit system inputs; };
-	        modules = [ ./machines/proxmox/configuration.nix ];
+	        modules = [ ./hosts/proxmox/configuration.nix ];
 	      };
       };
     };
