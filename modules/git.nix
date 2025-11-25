@@ -1,9 +1,12 @@
 { pkgs, ... }:
 
 {
-  # Add delta package for better diffs
   environment.systemPackages = with pkgs; [
+    # Fancier diffs
     delta
+
+    # GPG passphrase entry
+    pinentry-curses
   ];
 
   # Configure git
@@ -32,32 +35,5 @@
     pinentryPackage = pkgs.pinentry-curses;
     enableSSHSupport = true;
   };
-
-  # Set extra sudo options
-  security.sudo.extraConfig = ''
-    Defaults	pwfeedback
-    Defaults	insults
-  '';
-
-  # Remove old generations
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # Overlay for nvchad
-  # TODO: Move this somewhere else
-  nixpkgs.overlays = [
-    (final: prev: {
-      nvchad = inputs.nix4nvchad.packages."${pkgs.system}".nvchad;
-    })
-  ];
 }
 
