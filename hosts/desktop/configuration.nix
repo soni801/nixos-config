@@ -35,7 +35,7 @@
   # This is needed to get video output on Hyper-V
   #boot.kernelParams = [ "nomodeset" ];
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "sa-nix-01"; # Define your hostname.
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.soni = {
