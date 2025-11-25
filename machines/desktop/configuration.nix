@@ -27,19 +27,6 @@
   #boot.kernelParams = [ "nomodeset" ];
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Set your time zone.
-  time.timeZone = "Europe/Oslo";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.soni = {
@@ -47,47 +34,12 @@
     description = "Soni";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
-    packages = with pkgs; [ ];
-  };
-
-  # Set extra sudo options
-  security.sudo.extraConfig = ''
-    Defaults	pwfeedback
-    Defaults	insults
-  '';
-
-  # Enable Yubikey login
-  security.pam.services = {
-    login.u2fAuth = true;
-    sudo.u2fAuth = true;
-  };
-  security.pam.u2f.settings = {
-    cue = true;
-    interactive = true;
-  };
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Remove old generations
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
   };
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Nixpkgs
-    bat
-    delta
     dust
-    eza
-    fastfetch
-    fzf
-    pinentry-curses
-    tealdeer
     wakelan
     wineWowPackages.stable
     yt-dlp
@@ -95,60 +47,6 @@
 
   # This does not belong here but it is fine for now
   environment.variables.EDITOR = "nvim";
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry-curses;
-    enableSSHSupport = true;
-  };
-  services.pcscd.enable = true;
-
-  programs = {
-    tmux.enable = true;
-    htop.enable = true;
-    zsh = {
-      enable = true;
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-      shellAliases = {
-        ls = "eza -F -aa --icons --hyperlink";
-        cat = "bat";
-        vim = "nvim";
-        gl = "git log --oneline --graph --all";
-      };
-      ohMyZsh = {
-        enable = true;
-        theme = "refined";
-        plugins =
-          [ "colored-man-pages" "docker-compose" "docker" "rust" "ssh" ];
-      };
-      setOptions = [
-        "APPENDHISTORY"
-        "SHAREHISTORY"
-        "HIST_IGNORE_ALL_DUPS"
-        "HIST_SAVE_NO_DUPS"
-        "HIST_IGNORE_DUPS"
-        "HIST_FIND_NO_DUPS"
-      ];
-    };
-  };
-
-  # Enable Docker
-  virtualisation.docker.enable = true;
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
