@@ -3,8 +3,12 @@
 {
   # Packages
   environment.systemPackages = with pkgs; [
+    # Games
     clonehero
     tetrio-desktop
+
+    # Remote gaming
+    parsec-bin
 
     # Modrinth requires a silly fix
     # https://github.com/NixOS/nixpkgs/issues/359820#issuecomment-2601110696
@@ -19,6 +23,7 @@
     }))
   ];
 
-  # Programs
+  # Steam
   programs.steam.enable = true;
 }
+

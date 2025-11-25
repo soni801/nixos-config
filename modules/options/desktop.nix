@@ -7,51 +7,69 @@
     wayland.enable = true;
   };
 
-  # Let's have Plasma in addition to Hyprland just in case
-  services.desktopManager.plasma6.enable = true;
-
-  # Attempt fixing electron apps
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  # Enrionment variables
+  environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Fix electron frame pacing
 
   # Fonts
-  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono roboto ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono 
+    roboto
+  ];
 
   # Packages
   environment.systemPackages = with pkgs; [
-    # Nixpkgs
+    # Terminal emulator
     alacritty
+
+    # Application runner
     anyrun
+
+    # Chatting
     legcord
+
+    # File manager
     nautilus
-    parsec-bin
+
+    # Password manager
     proton-pass
+
+    # AirPlay server
     rpiplay
+
+    # Wayland clipboard
     wl-clipboard
 
-    # Stuff for Hyprland
+    # Screenshotting
     grim
+    slurp
+
+    # Hyprland packages
     hyprpanel
     hyprpolkitagent
-    slurp
     swaybg
 
-    # Flakes
+    # Browser
     inputs.zen-browser.packages."${system}".default
   ];
 
   # Programs
   programs = {
+    # Disk manager
     partition-manager.enable = true;
-    firefox.enable = true;
+    
+    # Hyprland
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${system}.hyprland;
       portalPackage =
         inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
     };
+
+    # Recording/streaming
     obs-studio = {
       enable = true;
       enableVirtualCamera = true;
     };
   };
 }
+

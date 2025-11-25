@@ -3,12 +3,13 @@
 {
   # Packages
   environment.systemPackages = with pkgs; [
-    # CLI apps
+    # GitHub CLI
     gh
 
     # Toolchains
     nodejs_22
     rustup
+    libgcc
 
     # JetBrains apps
     jetbrains.datagrip
@@ -16,8 +17,11 @@
     jetbrains.rust-rover
     jetbrains.webstorm
 
-    # Desktop apps
+    # Desktop app
     postman
+
+    # Visual Studio Code
     vscode
   ];
 }
+

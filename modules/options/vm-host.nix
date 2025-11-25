@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # GUI administration
   programs.virt-manager.enable = true;
 
   virtualisation = {
@@ -8,3 +9,4 @@
     spiceUSBRedirection.enable = true;
   };
 }
+
