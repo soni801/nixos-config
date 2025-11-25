@@ -1,7 +1,7 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 
 {
-  # Enable networking
+  # Use NetworkManager
   networking.networkmanager.enable = true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -9,8 +9,11 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  
+  # Explicit per-interface declarations
   # networking.interfaces.eth0.useDHCP = lib.mkDefault true;
 
+  # System architecture
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  # virtualisation.hypervGuest.enable = true;
 }
+
