@@ -26,7 +26,7 @@
     ../../modules/network/dynamic.nix
 
     # Home manager
-    ../../config/home-manager.nix
+    ../../home-manager.nix
 
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
