@@ -6,20 +6,29 @@
 
 {
   imports = [
-    # Import other config files
-    ../../config/desktop.nix
-    ../../config/development.nix
-    ../../config/gaming.nix
-    ../../config/networking.nix
-    ../../config/vm.nix
-    ../../config/git.nix
-    ../../config/nixpkgs.nix
+    # Default
+    ../../modules/git.nix
+    ../../modules/nix-options.nix
+    ../../modules/region.nix
+    ../../modules/security.nix
+
+    # Options
+    ../../modules/desktop.nix
+    ../../modules/development.nix
+    ../../modules/docker.nix
+    ../../modules/gaming.nix
+    ../../modules/shell.nix
+    ../../modules/sysadmin.nix
+    ../../modules/vm-host.nix
+    ../../modules/yubikey.nix
+
+    # Network
+    ../../modules/network/dynamic.nix
 
     # Home manager
     ../../config/home-manager.nix
 
     # Include the results of the hardware scan.
-    ./network.nix
     ./hardware-configuration.nix
   ];
 
