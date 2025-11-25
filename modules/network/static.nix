@@ -1,18 +1,19 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 
 {
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  #networking.useDHCP = lib.mkDefault true;
+  # IPv4 address
   networking.interfaces.ens18.ipv4.addresses = [
     {
       address = "0.0.0.0";
       prefixLength = 24;
     }
   ];
+
+  # Options
   networking.defaultGateway = "0.0.0.0";
   networking.nameservers = [ "0.0.0.0" ];
 
+  # System architecture
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
+
