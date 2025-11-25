@@ -6,7 +6,7 @@
     # Interactive replacements for coreutils
     bat
     eza
-   
+
     # Eye candy
     fastfetch
 
@@ -49,6 +49,5 @@
       ];
     };
   };
-
-
 }
+
