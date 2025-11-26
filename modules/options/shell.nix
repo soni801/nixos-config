@@ -24,7 +24,6 @@
       syntaxHighlighting.enable = true;
       enableBashCompletion = true;
       loginShellInit = ''
-        . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
         tldr --update
       '';
       shellAliases = {

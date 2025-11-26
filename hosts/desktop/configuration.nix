@@ -16,6 +16,7 @@
     ../../modules/options/desktop.nix
     ../../modules/options/development.nix
     ../../modules/options/docker.nix
+    ../../modules/options/editor.nix
     ../../modules/options/gaming.nix
     ../../modules/options/shell.nix
     ../../modules/options/sysadmin.nix
