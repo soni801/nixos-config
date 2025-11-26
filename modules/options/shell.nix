@@ -22,6 +22,11 @@
       enable = true;
       autosuggestions.enable = true;
       syntaxHighlighting.enable = true;
+      enableBashCompletion = true;
+      loginShellInit = ''
+        . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+        tldr --update
+      '';
       shellAliases = {
         ls = "eza -F -aa --icons --hyperlink";
         cat = "bat";
