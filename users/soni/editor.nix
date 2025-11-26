@@ -17,7 +17,21 @@
     '';
     chadrcConfig = ''
       local M = {}
-      M.ui = {theme = 'catppuccin'}
+
+      M.base46 = {
+        theme = "catppuccin"
+      }
+
+      M.ui = {
+        cmp = {
+          icons_left = true
+        }
+      }
+
+      M.nvdash = {
+        load_on_startup = true
+      }
+
       return M
     '';
   };
