@@ -21,7 +21,7 @@
     ../../modules/options/shell.nix
     ../../modules/options/sysadmin.nix
     ../../modules/options/vm-host.nix
-    ../../modules/options/yubikey.nix
+    # FIXME: ../../modules/options/yubikey.nix
 
     # Network
     ../../modules/network/dynamic.nix
