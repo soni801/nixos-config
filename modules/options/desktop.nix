@@ -2,10 +2,7 @@
 
 {
   # Display manager
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  services.displayManager.gdm.enable = true;
 
   # Enrionment variables
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Fix electron frame pacing
