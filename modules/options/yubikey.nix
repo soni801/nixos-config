@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Enable Yubikey login
@@ -12,6 +12,7 @@
     interactive = true;
   };
 
+  services.udev.packages = [ pkgs.yubikey-personalization ];
   services.pcscd.enable = true;
 }
 
