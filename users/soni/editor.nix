@@ -27,7 +27,7 @@
 
       M.ui = {
         cmp = {
-          icons_left = true
+          style = "atom_colored"
         }
       }
 
