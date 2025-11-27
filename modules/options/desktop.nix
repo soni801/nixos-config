@@ -47,6 +47,9 @@
 
     # Browser
     inputs.zen-browser.packages."${system}".default
+
+    # Cursor
+    banana-cursor
   ];
 
   # Programs
