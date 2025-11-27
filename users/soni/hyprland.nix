@@ -50,6 +50,7 @@
     exec-once = [
       "hyprpanel"
       "swaybg --image ~/.local/share/wallpapers/avery.jpeg --mode fill"
+      "hyprctl setcursor Banana 40"
     ];
 
     #env = [
