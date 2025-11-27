@@ -14,6 +14,9 @@
         space = "\u{22C5}",
         tab = "\u{2192}\u{2002}"
       }
+
+      require("base46").compile()
+      require("base46").load_all_highlights()
     '';
     chadrcConfig = ''
       local M = {}
