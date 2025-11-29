@@ -39,8 +39,12 @@
           "colored-man-pages"
           "docker-compose"
           "docker"
+          "gh"
+          "ng"
           "rust"
+          "safe-paste"
           "ssh"
+          "sudo"
         ];
       };
       setOptions = [
@@ -50,6 +54,7 @@
         "HIST_SAVE_NO_DUPS"
         "HIST_IGNORE_DUPS"
         "HIST_FIND_NO_DUPS"
+        "HIST_IGNORE_SPACE"
       ];
     };
   };
