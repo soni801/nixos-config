@@ -19,6 +19,7 @@
     ../../modules/options/docker.nix
     ../../modules/options/editor.nix
     ../../modules/options/gaming.nix
+    ../../modules/options/seafile.nix
     ../../modules/options/shell.nix
     ../../modules/options/sysadmin.nix
     ../../modules/options/vm-host.nix
