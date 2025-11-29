@@ -13,6 +13,7 @@
     ../../modules/security.nix
 
     # Options
+    ../../modules/options/bluetooth.nix
     ../../modules/options/camera.nix
     ../../modules/options/desktop.nix
     ../../modules/options/development.nix
