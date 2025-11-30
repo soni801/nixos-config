@@ -4,6 +4,7 @@
   imports = [
     # Import other config files
     ./hyprland.nix
+    ./hyprpanel.nix
     ./editor.nix
   ];
 
