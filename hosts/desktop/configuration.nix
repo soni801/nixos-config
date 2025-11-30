@@ -13,6 +13,7 @@
     ../../modules/security.nix
 
     # Options
+    ../../modules/options/apple-music.nix
     ../../modules/options/bluetooth.nix
     ../../modules/options/camera.nix
     ../../modules/options/desktop.nix
