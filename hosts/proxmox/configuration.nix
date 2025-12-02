@@ -25,7 +25,9 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "nixos-headless"; # Define your hostname.
+  # Hostname
+  networking.hostName = "nixos-proxmox";
+  #networking.domain = "";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.samuel = {

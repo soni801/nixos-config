@@ -8,10 +8,11 @@
       prefixLength = 24;
     }
   ];
-
-  # Options
   networking.defaultGateway = "0.0.0.0";
+
+  # DNS
   networking.nameservers = [ "0.0.0.0" ];
+  networking.search = [ ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
