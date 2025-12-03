@@ -1,20 +1,6 @@
 { inputs, pkgs, ... }:
 
 {
-  # Use an older version of Modrinth because the newest one is broken...
-  nixpkgs.overlays = [
-    (final: prev:
-      let
-        modrinthPkgs = import inputs.nixpkgs-modrinth {
-          system = prev.stdenv.hostPlatform.system;
-          config.allowUnfree = true;
-        };
-      in {
-        modrinth-app = modrinthPkgs.modrinth-app;
-      }
-    )
-  ];
-
   # Packages
   environment.systemPackages = with pkgs; [
     # Games
