@@ -14,6 +14,7 @@
     # JetBrains apps
     jetbrains.datagrip
     jetbrains.gateway
+    jetbrains.rider
     jetbrains.rust-rover
     jetbrains.webstorm
 
