@@ -18,12 +18,16 @@
     "nvidia_uvm"
     "nvidia_drm"
   ];
+
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "v4l2loopback" ];
   boot.extraModulePackages = [ ];
   boot.extraModprobeConfig = ''
     options hid_apple fnmode=2
   '';
+
+  # Firmware
+  hardware.enableAllFirmware = true;
 
   # Bootloader
   boot.loader = {
