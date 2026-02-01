@@ -3,6 +3,7 @@
 {
   imports = [
     # Import other config files
+    ./alacritty.nix
     ./hyprland.nix
     ./hyprpanel.nix
     ./editor.nix
