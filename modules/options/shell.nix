@@ -3,9 +3,10 @@
 {
   # Install shell stuff
   environment.systemPackages = with pkgs; [
-    # Interactive replacements for coreutils
-    bat
-    eza
+    # Interactive replacements for coreutils/builtin commands
+    atuin # history
+    bat # cat
+    eza # ls
 
     # Eye candy
     fastfetch
@@ -25,6 +26,9 @@
       enableBashCompletion = true;
       loginShellInit = ''
         tldr --update
+      '';
+      promptInit = ''
+        eval "$(atuin init zsh)"
       '';
       shellAliases = {
         ls = "eza -F -aa --icons --hyperlink";
