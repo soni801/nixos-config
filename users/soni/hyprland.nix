@@ -51,6 +51,7 @@
       "hyprpanel"
       "swaybg --image ~/.local/share/wallpapers/avery.jpeg --mode fill"
       "hyprctl setcursor Banana 40"
+      "clipse -listen"
     ];
 
     #env = [
@@ -172,6 +173,9 @@
 
       # Screenshotting
       "$mod SHIFT, S, exec, grim -g \"$(slurp -d)\" - | wl-copy"
+
+      # Clipboard manager
+      "$mod, V, exec, $terminal --class clipse -e clipse"
     ];
 
     # Move/resize windows with mainMod + LMB/RMB and dragging
@@ -186,6 +190,11 @@
 
       # Fix some dragging issues with XWayland
       "no_focus on, match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0"
+
+      # Clipse
+      "match:class clipse, float on"
+      "match:class clipse, size 622 652"
+      "match:class clipse, stay_focused on"
     ];
 
     # Bind workspaces to specific monitors

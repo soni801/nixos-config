@@ -34,6 +34,7 @@
     rpiplay
 
     # Wayland clipboard
+    clipse
     wl-clipboard
 
     # Screenshotting
