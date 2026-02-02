@@ -35,6 +35,8 @@
         cat = "bat";
         vim = "nvim";
         gl = "git log --oneline --graph --all";
+        gs = "git status";
+        gd = "git diff";
       };
       ohMyZsh = {
         enable = true;
