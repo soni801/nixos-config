@@ -55,7 +55,7 @@
     # Nixpkgs
     dust
     wakelan
-    wineWowPackages.stable
+    wineWow64Packages.stable
     yt-dlp
   ];
 
