@@ -17,7 +17,22 @@
   ];
 
   programs = {
-    tmux.enable = true;
+    tmux = {
+      enable = true;
+      baseIndex = 1;
+      shortcut = "Space";
+      plugins = with pkgs.tmuxPlugins; [
+        catppuccin
+        sensible
+        tmux-which-key
+        vim-tmux-navigator
+      ];
+      extraConfig = ''
+        set -g mouse on
+        bind -n M-H previous-window
+        bind -n M-L next-window
+      '';
+    };
     htop.enable = true;
     zsh = {
       enable = true;
@@ -26,6 +41,9 @@
       enableBashCompletion = true;
       loginShellInit = ''
         tldr --update
+      '';
+      interactiveShellInit = ''
+        tmux new -A
       '';
       promptInit = ''
         eval "$(atuin init zsh)"
