@@ -12,6 +12,8 @@
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     download-buffer-size = 524288000;
+    # Restrict nix daemon access to wheel group only
+    trusted-users = [ "@wheel" ];
   };
 
   # Allow unfree packages
