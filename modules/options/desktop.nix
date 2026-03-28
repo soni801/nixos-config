@@ -21,9 +21,6 @@
     # Application runner
     anyrun
 
-    # Chatting
-    legcord
-
     # File manager
     nautilus
 

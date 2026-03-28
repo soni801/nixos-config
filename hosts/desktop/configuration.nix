@@ -16,6 +16,7 @@
     ../../modules/options/apple-music.nix
     ../../modules/options/bluetooth.nix
     ../../modules/options/camera.nix
+    ../../modules/options/communication.nix
     ../../modules/options/desktop.nix
     ../../modules/options/development.nix
     ../../modules/options/docker.nix
