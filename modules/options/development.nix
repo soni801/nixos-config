@@ -11,6 +11,9 @@
     rustup
     libgcc
 
+    # Claude
+    claude-code
+
     # JetBrains apps
     jetbrains.datagrip
     jetbrains.gateway
