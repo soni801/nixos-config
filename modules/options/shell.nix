@@ -42,9 +42,12 @@
       loginShellInit = ''
         tldr --update
       '';
-      interactiveShellInit = ''
-        tmux new -A
-      '';
+      # Immediately start a tmux session in all interactive shells
+      # I would love to use this but it became a bit cumersome.
+      # Maybe I will come back to improving this in the future.
+      #interactiveShellInit = ''
+      #  tmux new -A
+      #'';
       promptInit = ''
         eval "$(atuin init zsh)"
       '';
