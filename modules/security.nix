@@ -63,7 +63,6 @@
   ];
 
   # Core dump protection — prevents credential leakage from crash dumps
-  systemd.coredump.extraConfig = "Storage=none";
   security.pam.loginLimits = [
     { domain = "*"; item = "core"; type = "hard"; value = "0"; }
   ];
