@@ -90,9 +90,6 @@
       };
 
       dwindle = {
-        # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-        pseudotile = true;
-
         # You probably want this
         preserve_split = true;
       };
@@ -124,7 +121,6 @@
         "$mod, F, togglefloating"
         "$mod, D, exec, $menu"
         "$mod, P, pseudo"
-        "$mod, J, togglesplit"
         "$mod SHIFT, F, fullscreen"
 
         # Move focus
