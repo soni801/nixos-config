@@ -51,7 +51,7 @@
       # Autostart necessary processes
       exec-once = [
         "hyprpanel"
-        "swaybg --image ~/.local/share/wallpapers/avery.jpeg --mode fill"
+        "hyprpaper"
         "hyprctl setcursor Banana 40"
         "clipse -listen"
       ];

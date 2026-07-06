@@ -51,7 +51,6 @@
     # Hyprland packages
     hyprpanel
     hyprpolkitagent
-    swaybg
 
     # Browser
     inputs.zen-browser.packages."${system}".default
