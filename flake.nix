@@ -6,6 +6,7 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    qylock.url = "github:Darkkal44/qylock";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -14,13 +15,16 @@
     nix4nvchad.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, qylock, ... }@inputs:
     let system = "x86_64-linux";
     in {
       nixosConfigurations = {
         desktop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit system inputs; };
-          modules = [ ./hosts/desktop/configuration.nix ];
+          modules = [
+            qylock.nixosModules.default
+            ./hosts/desktop/configuration.nix
+          ];
         };
         proxmox = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit system inputs; };

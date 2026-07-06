@@ -2,7 +2,16 @@
 
 {
   # Display manager
-  services.displayManager.gdm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+
+  # SDDM (qylock) theming
+  programs.qylock = {
+    enable = true;
+    theme = "pixel-night-city";
+  };
 
   # Enrionment variables
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Fix electron frame pacing
